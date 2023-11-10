@@ -13,9 +13,7 @@ __pycache__/
 .venv/
 env/
 bin/
-build/
 develop-eggs/
-dist/
 eggs/
 lib/
 lib64/
@@ -25,9 +23,7 @@ var/
 include/
 man/
 venv/
-*.egg-info/
 .installed.cfg
-*.egg
 
 # Installer logs
 pip-log.txt

@@ -1,0 +1,7 @@
+opencv-python
+setuptools
+tqdm
+scikit-learn
+numpy
+pybboxes
+eel

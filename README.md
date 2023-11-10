@@ -1,16 +1,16 @@
 # AugmentiX
-🚀 YOLO Dataset Augmentation Library 🖼️
+🚀 YOLO Dataset Augmentation package 🖼️
 
 ## Project Overview
 
-Welcome to AugmentiX, an image augmentation library designed to enhance your sample dataset for object detection, 
-particularly tailored for YOLO-based training datasets. The library provides a convenient GUI interface for specifying 
+Welcome to AugmentiX, an image augmentation package designed to enhance your sample dataset for object detection, 
+particularly tailored for YOLO-based training datasets. The package provides a convenient GUI interface for specifying 
 the number of samples, desired augmentation tasks, and the output directory to save the augmented images.
 
 ### Problem Statement
 
 AugmentiX addresses the challenges in efficiently augmenting datasets for object detection. Traditional methods often 
-involve coding augmentation tasks for each training, leading to time-consuming processes. This library aims to simplify 
+involve coding augmentation tasks for each training, leading to time-consuming processes. This package aims to simplify 
 the augmentation process, offering an intuitive GUI and performing tasks such as random rotation, cropping, flipping, 
 brightness adjustments, blur, noise, and more.
 

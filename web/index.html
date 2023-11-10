@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AugmentiX</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AugmentiX</h1>
+    <form>
+        <label for="datasetPath">Script Path:</label>
+        <input type="text" id="datasetPath" name="datasetPath" placeholder="Enter dataset path">
+
+        <label for="outputPath">Output Path:</label>
+        <input type="text" id="outputPath" name="outputPath" placeholder="Enter output path">
+
+        <label for="flipImage">Flip Image:</label>
+        <select id="flipImage" name="flipImage">
+            <option value="-1">-1</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="random">Random</option>
+        </select>
+
+        <label for="blurImage">Blur Image:</label>
+        <input id = "blurImage" type="text" name="blurImageKernel" placeholder="(Enter kernel), eg. (10,10)">
+<!--        <select id="blurImageType" name="blurImageType">-->
+<!--            <option value="default">Default</option>-->
+<!--            <option value="constant">Constant</option>-->
+<!--        </select>-->
+        <button type="submit">Start execution</button>
+    </form>
+</div>
+<script type="text/javascript" src="/eel.js"></script>
+<script src="./scripts.js"></script>
+</body>
+</html>
