@@ -30,6 +30,23 @@ To start using AugmentiX, follow these steps:
 3. To run the eel GUI, run the following command, uncomment the eel.start command and run : `python3 main.py`
 4. To run the CLI, run the following command: `python3 main.py --src <source directory of the dataset>`
 
+
+Before running the program, make sure the the dataset that is being augmented is in the following format:
+
+```
+dataset
+├── images
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   ├── 3.jpg
+│   └── ...
+└── labels
+    ├── 1.txt
+    ├── 2.txt
+    ├── 3.txt
+    └── ...
+|── data.yaml
+```
 ## Motivation
 
 AugmentiX was born out of a personal need to address the limitations of existing image augmentation libraries,
