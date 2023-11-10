@@ -89,6 +89,7 @@ def run(src, dst=None):
     print("Splitting and moving data complete.")
 
     print("Done.")
+    print(f"Release folder is located at: temp/release/{DATASET_NAME}")
 
 
 if __name__ == "__main__":

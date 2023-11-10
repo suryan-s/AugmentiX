@@ -25,9 +25,10 @@ brightness adjustments, blur, noise, and more.
 
 To start using AugmentiX, follow these steps:
 
-1. Clone the repository: [Your GitHub Repository Link]
+1. Clone the repository: https://github.com/suryan-s/AugmentiX.git
 2. Install the required dependencies.
-3. Run the GUI interface to set augmentation parameters and generate augmented images.
+3. To run the eel GUI, run the following command, uncomment the eel.start command and run : `python3 main.py`
+4. To run the CLI, run the following command: `python3 main.py --src <source directory of the dataset>`
 
 ## Motivation
 
