@@ -1,4 +1,5 @@
-# AugmentiX: 🚀 YOLO Dataset Augmentation Library 🖼️
+# AugmentiX
+🚀 YOLO Dataset Augmentation Library 🖼️
 
 ## Project Overview
 
