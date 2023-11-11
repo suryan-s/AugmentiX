@@ -1,4 +1,5 @@
 from setuptools import setup
+from distutils.core import Command
 
 with open("README.md") as fh:
     long_description = fh.read()
@@ -9,7 +10,7 @@ setup(
     url='https://github.com/suryan-s/AugmentiX',
     entry_points={
         'console_scripts': [
-            'augmentix = augmentix.main:run',
+            'augmentix = augmentix.main:main',
             ]
         },
     license='MIT',

@@ -111,24 +111,29 @@ def copy_folder(src: str, dst: str) -> bool:
         return False
 
 
-def split_and_move_data(source_folder, destination_folder, split_ratio=(0.7, 0.2, 0.1)):
+def split_and_move_data(source_folder, destination_folder, zip_location=None, split_ratio=(0.7, 0.2, 0.1)):
     """
     Split and move data from source_folder to train, test, and valid folders in destination_folder.
 
     Args:
         source_folder (str): Path to the source folder containing 'images' and 'labels' subfolders.
         destination_folder (str): Path to the destination folder where 'train', 'test', and 'valid' folders will be created.
+        zip_location (str): Path to where the zip file will be created.
         split_ratio (tuple): A tuple representing the split ratio for train, test, and valid sets. Default is (0.7, 0.2, 0.1).
     """
-    images_folder = os.path.join(source_folder, 'images')
-    labels_folder = os.path.join(source_folder, 'labels')
+    cwd = os.getcwd()
+    source_path = os.path.join(cwd, source_folder)
+    destination_path = os.path.join(cwd, destination_folder)
+    images_folder = os.path.join(source_path, 'images')
+    labels_folder = os.path.join(source_path, 'labels')
 
     # Create destination folders
-    train_folder = os.path.join(destination_folder, 'train')
-    test_folder = os.path.join(destination_folder, 'test')
-    valid_folder = os.path.join(destination_folder, 'valid')
-    source_folder_name = os.path.basename(destination_folder)
+    train_folder = os.path.join(destination_path, 'train')
+    test_folder = os.path.join(destination_path, 'test')
+    valid_folder = os.path.join(destination_path, 'valid')
+    source_folder_name = os.path.basename(destination_path)
 
+    os.makedirs(destination_path, exist_ok=True)
     os.makedirs(train_folder, exist_ok=True)
     os.makedirs(os.path.join(train_folder, 'images'), exist_ok=True)
     os.makedirs(os.path.join(train_folder, 'labels'), exist_ok=True)
@@ -162,8 +167,21 @@ def split_and_move_data(source_folder, destination_folder, split_ratio=(0.7, 0.2
     for file in valid_files:
         move_file(images_folder, labels_folder, file, valid_folder)
 
+    folder_zip_location = os.path.join(cwd, 'temp', 'release', source_folder_name)
+    shutil.make_archive(source_folder_name, 'zip', root_dir='.', base_dir=folder_zip_location)
+    if os.path.isfile(os.path.join(zip_location, f'{source_folder_name}.zip')):
+        os.remove(os.path.join(zip_location, f'{source_folder_name}.zip'))
+    shutil.move(os.path.join(cwd, source_folder_name + '.zip'), zip_location)
+
 
 def move_file(images_folder, labels_folder, file, destination_folder):
+    """
+    This function moves the file from images_folder and labels_folder to destination_folder
+    :param images_folder:
+    :param labels_folder:
+    :param file:
+    :param destination_folder:
+    """
     source_image_path = os.path.join(images_folder, file)
     source_label_path = os.path.join(labels_folder, file.replace('.jpg', '.txt'))
 
@@ -174,17 +192,16 @@ def move_file(images_folder, labels_folder, file, destination_folder):
     shutil.move(source_label_path, destination_label_path)
 
 
-def move_build_files(source_folder):
+def move_build_files(DATASET_NAME):
     """
     This function moves the build files to the output folder
-    :param source_folder:
+    :param DATASET_NAME:
     :return:
     """
-    source_folder_name = os.path.basename(source_folder)
     dirs_to_search = [
-        f'temp/build/{source_folder_name}/test',
-        f'temp/build/{source_folder_name}/train',
-        f'temp/build/{source_folder_name}/valid'
+        f'temp/build/{DATASET_NAME}/test',
+        f'temp/build/{DATASET_NAME}/train',
+        f'temp/build/{DATASET_NAME}/valid'
         ]
 
     for directory in dirs_to_search:
@@ -211,19 +228,3 @@ def move_build_files(source_folder):
                     print(f"Error moving files: {e}")
             else:
                 print(f"Error: Either {image_path} or {label_path} does not exist.")
-
-
-if __name__ == "__main__":
-    # Example usage
-    # source_folder = 'path/to/source/folder'
-    # destination_folder = 'path/to/destination/folder'
-    # split_and_move_data(source_folder, destination_folder)
-
-    startup_sequence()
-    # result = copy_folder('/home/s-suryan/Videos/License-Plate-Recognition-4', 'temp/build')
-    # print ("Copy status : " + str(result))
-    # result = check_folder_structures(os.path.basename('/home/s-suryan/Videos/License-Plate-Recognition-4'))
-    # print("Folder check status : " + str(result))
-    move_build_files('/temp/build/License-Plate-Recognition-4')
-
-    # ending_sequence()
