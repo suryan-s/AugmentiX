@@ -27,7 +27,9 @@ To start using AugmentiX, follow these steps:
 
 1. Install the package using the following command: `pip install augmentiX==0.0.10`
 2. Install the required dependencies.
-3. To run the CLI, run the following command: `augmentix --src <source directory of the dataset> --dst <destination directory>`
+3. To run the CLI, run the following command:
+   
+    `augmentix --src <source directory of the dataset> --dst <destination directory>`
 
 *Note:** The GUI is currently under development and will be released soon.
 
