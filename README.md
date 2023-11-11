@@ -25,13 +25,13 @@ brightness adjustments, blur, noise, and more.
 
 To start using AugmentiX, follow these steps:
 
-1. Clone the repository: https://github.com/suryan-s/AugmentiX.git
+1. Install the package using the following command: `pip install augmentiX==0.0.10`
 2. Install the required dependencies.
-3. To run the eel GUI, run the following command, uncomment the eel.start command and run : `python3 main.py`
-4. To run the CLI, run the following command: `python3 main.py --src <source directory of the dataset>`
+3. To run the CLI, run the following command: `augmentix --src <source directory of the dataset> --dst <destination directory>`
 
+*Note:** The GUI is currently under development and will be released soon.
 
-Before running the program, make sure the the dataset that is being augmented is in the following format:
+Before running the program, make sure the dataset that is being augmented is in the following format:
 
 ```
 dataset
