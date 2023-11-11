@@ -16,7 +16,7 @@ brightness adjustments, blur, noise, and more.
 
 ### Features
 
-- **User-Friendly GUI:** Easily specify the number of samples, augmentation tasks, and output directory through a graphical interface.
+- **User-Friendly GUI:** Easily specify the number of samples, augmentation tasks, and output directory through a graphical interface.(Would be updated soon)
 - **Comprehensive Augmentation Tasks:** Perform various augmentation tasks, including random rotation, cropping, flipping, brightness adjustments, blur, and noise.
 - **Annotation File Generation:** Create annotation files for augmented images, streamlining the dataset preparation process.
 - **Performance Enhancement with Rust:** Utilize Rust bindings for improved performance, especially in I/O operations.
