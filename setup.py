@@ -22,7 +22,7 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Topic :: Scientific/Engineering :: Image Augmentation",
+        "Topic :: Software Development :: Libraries",
         "Operating System :: OS Independent",
         ],
     install_requires=[open('requirements.txt').read().strip().split('\n')],
